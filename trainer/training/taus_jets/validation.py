@@ -17,14 +17,14 @@ from scipy.stats import wasserstein_distance
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "postprocessing"))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "utils"))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "extractor"))
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "extractor", "taus_NanoAOD_v9"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "extractor", "taus_jets"))
 
 from postprocessing import postprocessing
 from post_actions import target_dictionary_taus as target_dictionary
 from corner_plots import make_corner
 
 from nan_resampling import nan_resampling
-from columns import tau_cond as tau_cond_M
+from columns import jet_cond as tau_cond_M # Mark
 from columns import tau_names
 
 
@@ -171,11 +171,6 @@ def validate(
         plt.close()
 
     # Return to physical kinematic variables
-
-    for df in [reco, samples, saturated_samples]:
-        df["Tau_pt"] = df["Tau_ptRatio"] * gen["GenTau_pt"]
-        df["Tau_eta"] = df["Tau_etaMinusGen"] + gen["GenTau_eta"]
-        df["Tau_phi"] = df["Tau_phiMinusGen"] + gen["GenTau_phi"]
 
     # Zoom-in for high ws distributions
 

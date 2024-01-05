@@ -48,14 +48,14 @@ target_dictionary = {
  'idAntiMu': [["d", None, None]],
  'idDecayModeOldDMs': [["d", None, None]],
  'idAntiEleDeadECal': [["d", None, None]],
- "etaMinusGen": [
+ "eta": [
         ["i", np.tan, [100, 0]],
     ], 
- "phiMinusGen": [
+ "phi": [
         ["i", np.tan, [80, 0]],
         ["pmp"],
     ], 
- 'ptRatio': [
+ 'pt': [
         ["i", np.tan, [10, -10]], 
     ], 
  'cleanmask': [["c", 0.5, [0, 1]]] 

@@ -4,10 +4,10 @@ import json
 from taus import extract_taus
 
 # for Local run
-root = "/mnt/c/Users/Thammachath/Desktop/Code/Project/raw_data/NanoAOD_v9/"
+#root = "/mnt/c/Users/Thammachath/Desktop/Code/Project/raw_data/NanoAOD_v9/"
 
 # for CU e-Science run
-#root = "/work/project/cms/thammachath/NanoAOD_v9/"
+root = "/work/project/cms/thammachath/NanoAOD_v9/"
 
 ttbar_training_files = [
     "143F7726-375A-3D48-9D53-D6B071CED8F6.root",
@@ -38,7 +38,7 @@ if not os.path.exists(os.path.join(os.path.dirname(__file__), "dataset")):
 extracted = [os.path.join("dataset", f"MTaus_{i}.root") for i in range(len(file_paths))]
 
 d = {
-    "RECOTAU_GENTAU": (0, 0),
+    "RECOTAU_RECOJET": (0, 0),
 }
 
 if __name__ == "__main__":

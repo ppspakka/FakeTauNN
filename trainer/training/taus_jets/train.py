@@ -50,9 +50,9 @@ def trainer(gpu, save_dir, ngpus_per_node, args, val_func):
         )
 
     if args.log_name is not None:
-        log_dir = "/mnt/c/Users/Thammachath/Desktop/Code/Project/training/taus/m100_scratch/%s" % args.log_name
+        log_dir = "/work/project/cms/psriling/FakeTauNN/trainer/training/taus_jets/m100_scratch/%s" % args.log_name
     else:
-        log_dir = "/mnt/c/Users/Thammachath/Desktop/Code/Project/training/taus/m100_scratch/time-%d" % time.time()
+        log_dir = "/work/project/cms/psriling/FakeTauNN/trainer/training/taus_jets/m100_scratch/time-%d" % time.time()
 
     if not args.distributed or (args.rank % ngpus_per_node == 0):
         writer = SummaryWriter(logdir=log_dir)

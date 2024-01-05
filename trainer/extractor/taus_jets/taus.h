@@ -173,15 +173,14 @@ auto Mcharge(ROOT::VecOps::RVec<int>& pdgId) {
 }
 
 auto match_reco_to_gen(
-    ROOT::VecOps::RVec<int>& Tau_genPartIdx,       // Tau_genPartIdx
-    ROOT::VecOps::RVec<int>& GenPart_statusFlags) { // GenPart_statusFlags
+    ROOT::VecOps::RVec<int>& Tau_jetIdx) {
 
-    auto size = Tau_genPartIdx.size();
+    auto size = Tau_jetIdx.size();
     ROOT::VecOps::RVec<int> indexes(size);
     for (size_t i = 0; i < size; i++) {
         indexes[i] = -1;
-        auto curr_index = Tau_genPartIdx[i];
-        if ((curr_index >= 0) && ((GenPart_statusFlags[curr_index] & 8192) > 0)) {
+        auto curr_index = Tau_jetIdx[i];
+        if (curr_index >= 0) {
             indexes[i] = curr_index;
         }
     }
