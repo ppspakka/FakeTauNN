@@ -49,10 +49,10 @@ target_dictionary = {
  'idDecayModeOldDMs': [["d", None, None]],
  'idAntiEleDeadECal': [["d", None, None]],
  "eta": [
-        ["i", np.tan, [100, 0]],
+        ["i", np.sin, [1/(2.61), 0]],
     ], 
  "phi": [
-        ["i", np.tan, [80, 0]],
+        ["i", np.sin, [1/(np.pi+0.001), 0]],
         ["pmp"],
     ], 
  'pt': [

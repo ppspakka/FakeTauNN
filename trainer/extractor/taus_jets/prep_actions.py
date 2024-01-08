@@ -58,14 +58,17 @@ target_dictionary_taus = {
     "MTau_idDecayModeOldDMs": [["u", 0.5, None]],
     "MTau_idAntiEleDeadECal": [["u", 0.5, None]],
     "MTau_eta": [
-        ["t", np.arctan, [100, 0]], # Recheck
+        #["t", np.arctan, [100, 0]], # Recheck
+        ["t", np.arcsin, [1/(2.61), 0]],
     ],
     "MTau_phi": [
-        ["t", np.arctan, [80, 0]],  # Recheck
+        #["t", np.arctan, [80, 0]],
+        ["t", np.arcsin, [1/(np.pi+0.001), 0]],
     ], 
     "MTau_pt" : [
         #["manual_range", [0.1, 5]],
         ["t", np.arctan, [10, -10]], # Recheck
     ],
-    "MTau_cleanmask": [["u", 0.5, None]]
+    "MTau_cleanmask": [["u", 0.5, None]],
+    "MTau_genPartFlav": [["u", 0.5, None]],
 }
