@@ -67,7 +67,7 @@ target_dictionary_taus = {
     ], 
     "MTau_pt" : [
         #["manual_range", [0.1, 5]],
-        ["t", np.arctan, [10, -10]], # Recheck
+        ["t", np.log, [1, -17.9]], # Recheck
     ],
     "MTau_cleanmask": [["u", 0.5, None]],
     "MTau_genPartFlav": [["u", 0.5, None]],

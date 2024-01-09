@@ -56,9 +56,10 @@ target_dictionary = {
         ["pmp"],
     ], 
  'pt': [
-        ["i", np.tan, [10, -10]], 
+        ["i", np.exp, [1, -17.9]], 
     ], 
- 'cleanmask': [["c", 0.5, [0, 1]]] 
+ 'cleanmask': [["c", 0.5, [0, 1]]],
+ 'genPartFlav': [["upf", 0.5]],
 }
 
 

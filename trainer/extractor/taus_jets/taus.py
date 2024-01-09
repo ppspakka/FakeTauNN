@@ -84,7 +84,6 @@ def extractAllTauFeatures(df):
         .Define("MTau_idDecayModeOldDMs", "Tau_idDecayModeOldDMs[TauMask]")
         .Define("MTau_idAntiEleDeadECal", "Tau_idAntiEleDeadECal[TauMask]")
         .Define("MTau_eta", "Tau_eta[TauMask]")
-        .Define("MTau_filteredphi", "Tau_phi[TauMask]") # Recheck
         .Define("MTau_phi", "Tau_phi[TauMask]")         # Recheck
         .Define("MTau_pt", "Tau_pt[TauMask]")
         .Define("MTau_cleanmask", "Tau_cleanmask[TauMask]")
