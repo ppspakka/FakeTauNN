@@ -53,7 +53,6 @@ target_dictionary = {
     ], 
  "phi": [
         ["i", np.sin, [1/(np.pi+0.001), 0]],
-        ["pmp"],
     ], 
  'pt': [
         ["i", np.exp, [1, -17.9]], 
