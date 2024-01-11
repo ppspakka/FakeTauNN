@@ -52,7 +52,7 @@ target_dictionary = {
         ["i", np.tan, [100, 0]],
         #["i", np.sin, [1/(2.61), 0]],
     ], 
- "phi": [
+ "phiMinusReco": [
         ["i", np.tan, [80, 0]],
         ["pmp"],
         #["i", np.sin, [1/(np.pi+0.001), 0]],
