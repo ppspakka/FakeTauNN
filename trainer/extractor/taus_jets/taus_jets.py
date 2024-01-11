@@ -3,7 +3,7 @@ import ROOT
 
 from columns import jet_cond, reco_columns
 
-module_path = os.path.join(os.path.dirname(__file__), "taus.h")
+module_path = os.path.join(os.path.dirname(__file__), "taus_jets.h")
 
 ROOT.gInterpreter.ProcessLine(f'#include "{module_path}"')
 
@@ -20,7 +20,7 @@ def extractAllTauFeatures(df):
     extracted = (
          df.Define(
             "TauIdxToLastCopy",
-            "match_reco_to_gen(Tau_jetIdx)",
+            "filter_taus(Tau_jetIdx)",
         )
         .Define("TauMask", "TauIdxToLastCopy >= 0")
         .Define("MatchedJets", "Tau_jetIdx[TauMask]")
@@ -83,9 +83,10 @@ def extractAllTauFeatures(df):
         .Define("MTau_idAntiMu", "Tau_idAntiMu[TauMask]")
         .Define("MTau_idDecayModeOldDMs", "Tau_idDecayModeOldDMs[TauMask]")
         .Define("MTau_idAntiEleDeadECal", "Tau_idAntiEleDeadECal[TauMask]")
-        .Define("MTau_eta", "Tau_eta[TauMask]")
+        .Define("MTau_etaMinusReco", "Tau_eta[TauMask] - MJet_eta") # Recheck
         .Define("MTau_phi", "Tau_phi[TauMask]")         # Recheck
-        .Define("MTau_pt", "Tau_pt[TauMask]")
+        .Define("MTau_phiMinusReco", "MDeltaPhi(MTau_phi, MJet_phi)") # Recheck
+        .Define("MTau_ptRatio", "Tau_pt[TauMask] / MJet_pt") # Recheck
         .Define("MTau_cleanmask", "Tau_cleanmask[TauMask]")
         .Define("MTau_genPartFlav", "Tau_genPartFlav[TauMask]")
     )
@@ -103,8 +104,8 @@ def extract_taus(inputname, outputname, dict):
 
     n_match, n_reco = dict["RECOTAU_RECOJET"]
 
-    n_match += d.Histo1D("MTau_pt").GetEntries()
-    n_reco += d.Histo1D("Tau_pt").GetEntries()
+    n_match += d.Histo1D("MTau_ptRatio").GetEntries()
+    n_reco += d.Histo1D("MJet_pt").GetEntries()
 
     dict["RECOTAU_RECOJET"] = (n_match, n_reco)
 

@@ -48,14 +48,18 @@ target_dictionary = {
  'idAntiMu': [["d", None, None]],
  'idDecayModeOldDMs': [["d", None, None]],
  'idAntiEleDeadECal': [["d", None, None]],
- "eta": [
-        ["i", np.sin, [1/(2.61), 0]],
+ "etaMinusReco": [
+        ["i", np.tan, [100, 0]],
+        #["i", np.sin, [1/(2.61), 0]],
     ], 
  "phi": [
-        ["i", np.sin, [1/(np.pi+0.001), 0]],
+        ["i", np.tan, [80, 0]],
+        ["pmp"],
+        #["i", np.sin, [1/(np.pi+0.001), 0]],
     ], 
- 'pt': [
-        ["i", np.exp, [1, -17.9]], 
+ 'ptRatio': [
+        ["i", np.tan, [10, -10]],
+        #["i", np.exp, [1, -17.9]], 
     ], 
  'cleanmask': [["c", 0.5, [0, 1]]],
  'genPartFlav': [["upf", 0.5]],

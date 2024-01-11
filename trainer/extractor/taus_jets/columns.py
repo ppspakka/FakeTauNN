@@ -64,9 +64,9 @@ tau_names = [
     "idAntiMu",
     "idDecayModeOldDMs",
     "idAntiEleDeadECal",
-    "eta",  
-    "phi", 
-    "pt",
+    "etaMinusReco",          #
+    "phiMinusReco",          #
+    "ptRatio",          #   
     "cleanmask",
     "genPartFlav",
  ]

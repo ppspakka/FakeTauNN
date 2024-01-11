@@ -50,9 +50,12 @@ def trainer(gpu, save_dir, ngpus_per_node, args, val_func):
         )
 
     if args.log_name is not None:
-        log_dir = "/mnt/c/Users/HEP/Desktop/HEP/FakeTauNN/trainer/training/taus_jets/m100_scratch/%s" % args.log_name
+        #log_dir = "/mnt/c/Users/HEP/Desktop/HEP/FakeTauNN/trainer/training/taus_jets/m100_scratch/%s" % args.log_name
+        # Relative path above FakeTauNN (for easier use on multiple machines)
+        log_dir = "../../../../m100_scratch/%s" % args.log_name
     else:
-        log_dir = "/mnt/c/Users/HEP/Desktop/HEP/FakeTauNN/trainer/training/taus_jets/m100_scratch/time-%d" % time.time()
+        #log_dir = "/mnt/c/Users/HEP/Desktop/HEP/FakeTauNN/trainer/training/taus_jets/m100_scratch/time-%d" % time.time()
+        log_dir = "../../../../m100_scratch/time-%d" % time.time()
 
     if not args.distributed or (args.rank % ngpus_per_node == 0):
         writer = SummaryWriter(logdir=log_dir)
@@ -295,7 +298,9 @@ def trainer(gpu, save_dir, ngpus_per_node, args, val_func):
                 args.log_name, epoch, train_loss, train_log_p, train_log_det
             )
         )
-        with open('/mnt/c/Users/HEP/Desktop/HEP/FakeTauNN/trainer/training/taus_jets/m100_scratch/modeldata.txt', 'a') as file:
+        #with open('/mnt/c/Users/HEP/Desktop/HEP/FakeTauNN/trainer/training/taus_jets/m100_scratch/modeldata.txt', 'a') as file:
+        # Relative path above FakeTauNN (for easier use on multiple machines)
+        with open('../../../../modeldata.txt', 'a') as file:
             file.write("Model:{} Train Epoch: {} \tAverage Loss: {:.4f}, \tAverage log p: {:.4f}, \tAverage log det: {:.4f}\n".format(
                         args.log_name, epoch, train_loss, train_log_p, train_log_det
                         )
@@ -335,7 +340,9 @@ def trainer(gpu, save_dir, ngpus_per_node, args, val_func):
                     test_loss, test_log_p, test_log_det
                 )
             )
-            with open('/mnt/c/Users/HEP/Desktop/HEP/FakeTauNN/trainer/training/taus_jets/m100_scratch/modeldata.txt', 'a') as file:
+            #with open('/mnt/c/Users/HEP/Desktop/HEP/FakeTauNN/trainer/training/taus_jets/m100_scratch/modeldata.txt', 'a') as file:
+            # Relative path above FakeTauNN (for easier use on multiple machines)
+            with open('../../../../modeldata.txt', 'a') as file:
                 file.write("Test set: Average loss: {:.4f}, \tAverage log p: {:.4f}, \tAverage log det: {:.4f}\n".format(
                         test_loss, test_log_p, test_log_det
                         )

@@ -57,17 +57,18 @@ target_dictionary_taus = {
     "MTau_idAntiMu": [['u', 0.5, None]],
     "MTau_idDecayModeOldDMs": [["u", 0.5, None]],
     "MTau_idAntiEleDeadECal": [["u", 0.5, None]],
-    "MTau_eta": [
-        #["t", np.arctan, [100, 0]], # Recheck
-        ["t", np.arcsin, [1/(2.61), 0]],
+    "MTau_etaMinusReco": [
+        ["t", np.arctan, [100, 0]], # Recheck
+        #["t", np.arcsin, [1/(2.61), 0]], # For eta
     ],
-    "MTau_phi": [
-        #["t", np.arctan, [80, 0]],
-        ["t", np.arcsin, [1/(np.pi+0.001), 0]],
+    "MTau_phiMinusReco": [
+        ["t", np.arctan, [80, 0]],
+        #["t", np.arcsin, [1/(np.pi+0.001), 0]], # For phi
     ], 
-    "MTau_pt" : [
-        #["manual_range", [0.1, 5]],
-        ["t", np.log, [1, -17.9]], # Recheck
+    "MTau_ptRatio": [
+        ["manual_range", [0.1, 5]],
+        ["t", np.arctan, [10, -10]],
+        #["t", np.log, [1, -17.9]], # For pt
     ],
     "MTau_cleanmask": [["u", 0.5, None]],
     "MTau_genPartFlav": [["u", 0.5, None]],

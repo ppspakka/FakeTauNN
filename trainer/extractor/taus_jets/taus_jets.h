@@ -172,7 +172,7 @@ auto Mcharge(ROOT::VecOps::RVec<int>& pdgId) {
     return charge;
 }
 
-auto match_reco_to_gen(
+auto filter_taus(
     ROOT::VecOps::RVec<int>& Tau_jetIdx) {
 
     auto size = Tau_jetIdx.size();

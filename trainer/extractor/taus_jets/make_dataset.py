@@ -1,10 +1,10 @@
 import os
 import json
 
-from taus import extract_taus
+from taus_jets import extract_taus
 
 # for Local run
-#root = "/mnt/c/Users/Thammachath/Desktop/Code/Project/raw_data/NanoAOD_v9/"
+#root = "/mnt/c/Users/HEP/Desktop/..."
 
 # for CU e-Science run
 root = "/work/project/cms/thammachath/NanoAOD_v9/"
