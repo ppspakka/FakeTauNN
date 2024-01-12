@@ -4,6 +4,11 @@ import argparse
 Y_DIM = 39
 X_DIM = 25
 
+# Get X_DIM and Y_DIM from the dataset (relative path ../../extractor/taus_jets/columns.py)
+#from ...extractor.taus_jets.columns import jet_cond, reco_columns
+#Y_DIM = len(jet_cond)
+#X_DIM = len(reco_columns)
+
 
 def add_args(parser):
  # model architecture options

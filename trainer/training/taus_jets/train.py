@@ -300,7 +300,7 @@ def trainer(gpu, save_dir, ngpus_per_node, args, val_func):
         )
         #with open('/mnt/c/Users/HEP/Desktop/HEP/FakeTauNN/trainer/training/taus_jets/m100_scratch/modeldata.txt', 'a') as file:
         # Relative path above FakeTauNN (for easier use on multiple machines)
-        with open('../../../../modeldata.txt', 'a') as file:
+        with open('../../../../m100_scratch/modeldata.txt', 'a') as file:
             file.write("Model:{} Train Epoch: {} \tAverage Loss: {:.4f}, \tAverage log p: {:.4f}, \tAverage log det: {:.4f}\n".format(
                         args.log_name, epoch, train_loss, train_log_p, train_log_det
                         )
@@ -392,7 +392,8 @@ def main():
 
     args.log_name = args.log_name
     dirpath = os.path.dirname(__file__)
-    save_dir = os.path.join(dirpath, "m100_scratch/checkpoints", args.log_name)
+    #save_dir = os.path.join(dirpath, "m100_scratch/checkpoints", args.log_name)
+    save_dir = os.path.join("../../../../m100_scratch/checkpoints", args.log_name)
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
 

@@ -172,6 +172,11 @@ def validate(
 
     # Return to physical kinematic variables
 
+    for df in [reco, samples, saturated_samples]:
+        df["Tau_pt"] = df["Tau_ptRatio"] * gen["Jet_pt"]
+        df["Tau_eta"] = df["Tau_etaMinusReco"] + gen["Jet_eta"]
+        df["Tau_phi"] = df["Tau_phiMinusReco"] + gen["Jet_phi"]
+
     # Zoom-in for high ws distributions
 
     incriminated = [
