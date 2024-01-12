@@ -66,7 +66,7 @@ target_dictionary_taus = {
         #["t", np.arcsin, [1/(np.pi+0.001), 0]], # For phi
     ], 
     "MTau_ptRatio": [
-        ["manual_range", [0.1, 5]],
+        #["manual_range", [0.1, 5]],
         ["t", np.arctan, [10, -10]],
         #["t", np.log, [1, -17.9]], # For pt
     ],

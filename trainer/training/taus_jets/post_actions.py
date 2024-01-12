@@ -58,7 +58,7 @@ target_dictionary = {
         #["i", np.sin, [1/(np.pi+0.001), 0]],
     ], 
  'ptRatio': [
-        ["i", np.tan, [10, -1]],
+        ["i", np.tan, [10, -10]],
         #["i", np.exp, [1, -17.9]], 
     ], 
  'cleanmask': [["c", 0.5, [0, 1]]],
